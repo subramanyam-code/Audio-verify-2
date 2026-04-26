@@ -8,7 +8,7 @@ import { ShieldCheck } from 'lucide-react';
 
 const AppLayout: React.FC = () => {
   return (
-    <div className="relative min-h-screen w-full text-white overflow-x-hidden font-sans">
+    <div className="relative min-h-screen w-full text-black dark:text-white overflow-x-hidden font-sans">
       <BackgroundFX />
       <CursorFX />
       <Navbar />
@@ -21,7 +21,7 @@ const AppLayout: React.FC = () => {
       </main>
 
       <footer className="relative pb-8 px-4">
-        <div className="flex items-center justify-center gap-2 text-white/40 text-xs sm:text-sm">
+        <div className="flex items-center justify-center gap-2 text-gray-600 dark:text-white/40 text-xs sm:text-sm">
           <ShieldCheck className="w-4 h-4" />
           <span>Your files are secure and processed privately</span>
         </div>

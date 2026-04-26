@@ -41,14 +41,14 @@ function Dropdown<T extends { value: string; label: string; meta?: string }>({
           setFocused(false);
           setTimeout(() => setOpen(false), 120);
         }}
-        className={`w-full flex items-center justify-between px-4 py-3 rounded-xl bg-black/40 backdrop-blur-md border text-left transition-all duration-300 ${
+        className={`w-full flex items-center justify-between px-4 py-3 rounded-xl bg-white dark:bg-black/40 dark:backdrop-blur-md border border-gray-200 dark:border-white/10 text-left transition-all duration-300 ${
           focused || open
             ? 'border-cyan-400/60 shadow-[0_0_20px_rgba(56,189,248,0.25)]'
             : 'border-white/10 hover:border-white/20'
         }`}
       >
         <span className="text-sm">
-          <span className="text-white">{selected?.label}</span>
+          <span className="text-gray-800 dark:text-white">{selected?.label}</span>
           {selected?.meta && (
             <span className="ml-2 text-cyan-300/70 text-xs">({selected.meta})</span>
           )}
@@ -81,7 +81,7 @@ function Dropdown<T extends { value: string; label: string; meta?: string }>({
             className={`w-full flex items-center justify-between px-4 py-2.5 text-sm text-left transition ${
               opt.value === value
                 ? 'bg-cyan-500/10 text-cyan-200'
-                : 'text-white/80 hover:bg-white/5 hover:text-white'
+                : 'text-gray-800 dark:text-white/80 hover:bg-gray-100 dark:hover:bg-white/5 hover:text-gray-900 dark:hover:text-white'
             }`}
           >
             <span>
@@ -189,12 +189,12 @@ const UploadCard: React.FC = () => {
         <div className="absolute -inset-px rounded-3xl bg-gradient-to-br from-cyan-400/30 via-purple-500/20 to-blue-500/30 blur-xl opacity-70" />
         <div className="absolute -inset-px rounded-3xl bg-gradient-to-br from-cyan-400/40 via-transparent to-purple-500/40" />
 
-        <div className="relative rounded-3xl bg-[#0a0820]/60 backdrop-blur-2xl border border-white/10 p-6 sm:p-8 shadow-2xl shadow-purple-950/40">
+        <div className="relative rounded-3xl bg-white dark:bg-[#0a0820]/60 dark:backdrop-blur-2xl border border-gray-200 dark:border-white/10 p-6 sm:p-8 shadow-sm dark:shadow-2xl dark:shadow-purple-950/40">
           <div className="text-center mb-6">
-            <h2 className="text-2xl sm:text-3xl font-semibold text-white tracking-tight">
+            <h2 className="text-2xl sm:text-3xl font-semibold text-black dark:text-white tracking-tight">
               Upload Audio File
             </h2>
-            <p className="text-sm sm:text-base text-white/60 mt-2">
+            <p className="text-sm sm:text-base text-gray-800 dark:text-white/60 mt-2">
               Upload your audio file for authenticity analysis
             </p>
           </div>
@@ -266,7 +266,7 @@ const UploadCard: React.FC = () => {
                       e.stopPropagation();
                       handleReset();
                     }}
-                    className="text-white/60 hover:text-white"
+                    className="text-gray-600 hover:text-gray-800 dark:text-white/60 dark:hover:text-white"
                   >
                     <X className="w-4 h-4" />
                   </button>
@@ -274,10 +274,10 @@ const UploadCard: React.FC = () => {
               </div>
             ) : (
               <>
-                <p className="relative text-base sm:text-lg font-medium text-white">
+                <p className="relative text-base sm:text-lg font-medium text-black dark:text-white">
                   Drop audio file here
                 </p>
-                <p className="relative text-sm text-white/50 mt-1">
+                <p className="relative text-sm text-gray-700 dark:text-white/50 mt-1">
                   or click to browse (MP3, WAV, M4A)
                 </p>
               </>

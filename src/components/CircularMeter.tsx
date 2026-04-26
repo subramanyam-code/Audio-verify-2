@@ -83,11 +83,11 @@ const CircularMeter: React.FC<CircularMeterProps> = ({ value, label, verdict }) 
           initial={{ scale: 0.8, opacity: 0 }}
           animate={{ scale: 1, opacity: 1 }}
           transition={{ delay: 0.4, duration: 0.5 }}
-          className="text-4xl font-bold bg-gradient-to-br from-white to-white/70 bg-clip-text text-transparent tabular-nums"
+          className="text-4xl font-bold tabular-nums text-gray-800 dark:bg-gradient-to-br dark:from-white dark:to-white/70 dark:bg-clip-text dark:text-transparent"
         >
           {displayValue.toFixed(1)}%
         </motion.div>
-        <div className="text-[10px] uppercase tracking-[0.2em] text-white/50 mt-1">{label}</div>
+        <div className="text-[10px] uppercase tracking-[0.2em] text-gray-800 dark:text-white/50 mt-1">{label}</div>
       </div>
     </div>
   );
